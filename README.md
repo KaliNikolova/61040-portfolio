@@ -7,7 +7,7 @@ Some info about me:
 2. I love hiking.
 3. Here is my cat:
 
-![picture of my cat](assets\20190612_173018.jpg)
+![picture of my cat](assets/20190612_173018.jpg)
 
 
 # Table of Contents
