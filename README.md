@@ -12,3 +12,4 @@ Some info about me:
 
 # Table of Contents
 [Link to Assignment 1](assignments/assignment1.md)
+[Link to Problem Set 1](assignments/pset1.md)
