@@ -5,9 +5,9 @@ My name is Kalina Nikolova and I'm an undergraduate student majoring in 6-3.
 Some info about me:
 1. I play basketball.
 2. I love hiking.
-3. I have a cat which looks just like this one:
+3. Here is my cat:
 
-![picture of a cat](https://t4.ftcdn.net/jpg/00/90/18/17/240_F_90181713_PY0rXBejsiPeuwB20cjNAx9WPXK0AwgQ.jpg)
+![picture of my cat](assets\20190612_173018.jpg)
 
 
 # Table of Contents
