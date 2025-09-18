@@ -5,7 +5,7 @@
 
 1. **Invariants.** What are two invariants of the state? (*Hint:* one is about aggregation/counts of items, and one relates requests and purchases). Say which one is more important and why; identify the action whose design is most affected by it, and say how it preserves it.
 
-- For every request, its count must be greater than or equal to zero.
+- For any request or purchase, its count must be greater than or equal to zero.
 
 - For every purchase in a registry, there must exist a corresponding request for the same item, and the total count of purchases for that item must be <= the original requested count.
 
@@ -16,11 +16,20 @@ Action most affected: purchase. It checks that a request exists and has at least
 
 2. **Fixing an action.** Can you identify an action that potentially breaks this important invariant, and say how this might happen? How might this problem be fixed?
 
-Problematic action: removeItem.
+Problematic action: removeItem
 
 If a giver already purchased an item, removing its request would break the consistency invariant — because now a purchase exists without a corresponding request.
 
 Fix: disallow removing items that already have purchases.
+
+Also, for the first invariant (count always being nonnegative):
+
+Problematic action: purchase
+
+A user could call the action with a negative count (e.g., -2). The requires clause Request.count >= -2 would pass, but the action would then incorrectly add 2 to the request count and create a nonsensical purchase record.
+
+Fix: Add a precondition to the purchase action: requires count > 0.
+
 
 3. **Inferring behavior.** The operational principle describes the typical scenario in which the registry is opened and eventually closed. But a concept specification often allows other scenarios. By reading the specs of the concept actions, say whether a registry can be opened and closed repeatedly. What is a reason to allow this?
 
@@ -47,23 +56,19 @@ To support hiding purchases, the Registry state could be augmented with a showPu
 ```
 state
     a set of Registrys with
-
         an owner User
         an active Flag
         a showPurchases Flag
         a set of Requests
-
 ```
 
 We will also need to add an action for this flag:
 
 ```
-
 actions
   togglePurchaseVisibility (registry: Registry)
     requires registry exists
     effects set the showPurchases flag to its opposite value
-
 ```
 
 The query that a registry owner uses to view purchased items would then need to respect this flag, only showing the purchases if showPurchases is true.
@@ -85,7 +90,6 @@ The query that a registry owner uses to view purchased items would then need to 
 
 
 ```
-
 concept PasswordAuthentication
 purpose limit access to known users
 principle after a user registers with a username and a password,
@@ -104,7 +108,6 @@ register (username: String, password: String): (user: User)
 authenticate (username: String, password: String): (user: User)
     requires a User with the given username exists and their password matches the one provided
     effects returns the matching User
-
 ```
 
 
@@ -118,7 +121,6 @@ Preservation: The register action preserves this invariant through its requires 
 4. One widely used extension of this concept requires that registration be confirmed by email. Extend the concept to include this functionality. (*Hints:* you should add (1) an extra result variable to the register action that returns a secret token that (via a sync) will be emailed to the user; (2) a new confirm action that takes a username and a secret token and completes the registration; (3) whatever additional state is needed to support this behavior.)
 
 ```
-
   concept PasswordAuthentication
   purpose limit access to known and verified users
   principle after a user registers with a username and a password, they receive a secret token. They must use this token to confirm their registration before they can authenticate. Once confirmed, they can authenticate with their username and password and be treated as the same user each time.
@@ -146,7 +148,6 @@ Preservation: The register action preserves this invariant through its requires 
     authenticate (username: String, password: String): (user: User)
         requires a User with the given username exists, has a CONFIRMED status, and their password matches the one provided
         effects returns the matching User
-
 ```
 
 ## Exercise 3: Comparing concepts
@@ -154,7 +155,6 @@ Preservation: The register action preserves this invariant through its requires 
 Concept specification for PersonalAccessToken:
 
 ```
-
 concept PersonalAccessToken [User, Scope]
 purpose provide revocable, scoped, programmatic access on behalf of a user.
 principle 
@@ -181,7 +181,6 @@ actions
   revoke (token: PersonalAccessToken)
     requires the token exists
     effects deletes the PersonalAccessToken.
-
 ```
 
 How the PersonalAccessToken and PasswordAuthentication concepts differ:
@@ -207,7 +206,6 @@ A more effective explanation would be: "Passwords are for you. Tokens are for yo
 1. URL Shortener
 
 ```
-
 concept URLShortener [User]
 purpose to create short, memorable, and shareable aliases for long URLs.
 principle 
@@ -228,7 +226,6 @@ actions
   delete (alias: String, owner: User)
     requires a ShortURL with the given alias exists and its owner matches the provided owner.
     effects deletes the ShortURL.
-
 ```
 
 Notes:
@@ -240,7 +237,6 @@ Notes:
 2. Billable Hours Tracking
 
 ```
-
 concept BillableHoursTracking [Employee, Project]
 purpose to allow employees to accurately record time spent on specific client projects for billing purposes.
 principle
@@ -268,7 +264,6 @@ actions
   editSession (session: WorkSession, newStartTime: DateTime, newEndTime: DateTime)
     requires newStartTime is before newEndTime.
     effects updates the startTime and endTime for the specified session.
-
 ```
 
 Notes:
@@ -280,7 +275,6 @@ Notes:
 3. Conference Room Booking
 
 ```
-
 concept ConferenceRoomBooking [User]
 purpose to enable users to find and reserve available conference rooms for specific time slots.
 principle
@@ -313,7 +307,6 @@ actions
   cancelBooking (user: User, booking: Booking)
     requires the booking exists and the 'bookedBy' user of the booking matches the provided user.
     effects deletes the booking.
-
 ```
 
 Notes:
