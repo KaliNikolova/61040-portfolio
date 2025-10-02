@@ -40,12 +40,12 @@ The core problem is that traditional to-do lists fail to provide a realistic and
 ## Application pitch
 
 
-**Name:** ...
+**Name:** Current
 
-**Motivation:** ... is for anyone who feels overwhelmed and stuck by a long to-do list that doesn't fit the dynamic reality of their day.
+**Motivation:** Current is for anyone who feels overwhelmed and stuck by a long to-do list that doesn't fit the dynamic reality of their day.
 
 **Key features:**
-We’ve all been there: staring at a huge to-do list, feeling so overwhelmed that we don't know where to start. You end up spending hours planning your work instead of actually doing it. Then, a single unexpected meeting throws your entire "perfect" plan into chaos. ... is designed to be a calm, focused guide that cuts through that noise.
+We’ve all been there: staring at a huge to-do list, feeling so overwhelmed that we don't know where to start. You end up spending hours planning your work instead of actually doing it. Then, a single unexpected meeting throws your entire "perfect" plan into chaos. Current is designed to be a calm, focused guide that cuts through that noise.
 
 1. **The "Now" Screen**
 
@@ -57,14 +57,14 @@ We’ve all been there: staring at a huge to-do list, feeling so overwhelmed tha
 
 2. **Calendar-Aware Scheduling**
 
-    **What it is:** ... connects to your main calendar to see your classes, appointments, and meetings. It then intelligently finds the real, open slots in your day and creates an achievable schedule by placing your flexible tasks within those windows.
+    **What it is:** Current connects to your main calendar to see your classes, appointments, and meetings. It then intelligently finds the real, open slots in your day and creates an achievable schedule by placing your flexible tasks within those windows.
 
     **Why it helps:** This grounds your plan in reality. It transforms a static wish list into a dynamic, actionable schedule. This helps The Overwhelmed Student avoid overcommitting, making them more reliable. This newfound predictability means they can make and keep promises, which is a huge relief for a Teammate/Collaborator who depends on them for a group project.
 
     
 3. **One-Click Rescheduling**
 
-    **What it is:** Life is unpredictable. When a meeting runs late or a task takes longer than expected, you can press a single "Re-plan my day" button. ... instantly re-evaluates your remaining tasks and proposes a new, realistic schedule for the rest of the day.
+    **What it is:** Life is unpredictable. When a meeting runs late or a task takes longer than expected, you can press a single "Re-plan my day" button. Current instantly re-evaluates your remaining tasks and proposes a new, realistic schedule for the rest of the day.
 
     **Why it helps:** This feature removes the guilt and stress of a "failed" plan. Instead of a day falling into chaos after one disruption, the app provides a low-stress way to adapt and keep moving forward. This builds resilience and is a key coping mechanism that a Therapist or Academic Coach would support, helping the student manage challenges without getting discouraged.
 
