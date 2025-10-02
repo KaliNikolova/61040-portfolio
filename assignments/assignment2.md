@@ -275,3 +275,21 @@ Each of the five concepts in the application plays a distinct and independent ro
 The `Schedule` concept provides the real-world constraints, defining when a user is unavailable due to fixed commitments from external calendars or manually blocked time. The `Planner` concept is the strategic engine. It composes information from `Tasks` (what to do) and `Schedule` (when there is time) to create a concrete, actionable daily plan. Finally, the `Focus` concept is the user-facing execution layer. Its sole job is to direct the user's attention by presenting the single `CurrentTask` they should be working on, as determined by the `Planner`.
 
 In this composition, the generic `User` parameter in all other concepts is instantiated by the `User` from the `UserAccount` concept. The generic `Task` parameter used by the `Planner` and `Focus` concepts is instantiated by the `Task` from the `Tasks` concept.
+
+
+## UI Sketches
+
+![alt text](../assets/assignment2-sketch.png)
+
+
+ ## User Journey
+
+ Alex, our user, wakes up on Sunday morning feeling overwhelmed. Her 6.1040 assignment is due tonight, she has a club meeting to prepare for, and she knows there are other chores, but her to-do list is a scattered mess across sticky notes. She opens the app on her laptop, which syncs with her Google Calendar, pulling in a "Brunch with Friends" appointment she'd forgotten about.
+She navigates to the "All Tasks" view and starts by adding the tasks from her sticky notes: "Do Laundry," "Call Mom," and "Prep for club meeting." She sees the big assignment is buried in the list, so she drags it to the very top to mark it as her highest priority. Now that everything is captured, she clicks the "Re-plan my day" button located on the Main Dashboard. The app instantly generates a schedule. The persistent banner at the top of her screen updates: "CURRENT TASK: Work on 6.1040 Assignment." Finally, she has a clear starting point.
+After working for an hour, she takes a break and decides to check her plan for the rest of the day. She clicks on the "Day Plan" view. She sees her brunch appointment is correctly blocked out, and her other tasks like "Do Laundry" are scheduled for the late afternoon. This gives her the confidence that everything will get done.
+
+Later, after her assignment is submitted, she returns to the "All Tasks" view and proudly clicks the checkbox next to "Work on 6.1040 Assignment." The item grays out and moves to a "Completed" section. The persistent "Current Task" banner at the top of the screen immediately updates to her next scheduled item: "Prep for club meeting." While on this screen, she notices a task "Return library books" that is no longer relevant. She clicks the trash can icon next to it. The "Delete Confirmation" popup appears. She confirms by clicking "Delete," cleaning up her list. After a while she completes the prep for the club meeting and clicks completed in the Main Dashboard.
+
+She finally decides to plan for tomorrow and adds a few new assignments by clicking "Add New Task" at the "All Tasks" window.
+
+Outcome: Alex has transformed her chaotic day into an organized, actionable plan. She started with her most important task without decision fatigue, adapted her schedule on the fly, and felt a sense of accomplishment as she checked items off her list. The app successfully acted as a buffer against her usual feelings of overwhelm.
