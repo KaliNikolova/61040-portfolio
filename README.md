@@ -15,7 +15,9 @@ Some info about me:
 [Link to Problem Set 1](assignments/pset1.md)\
 [Link to Problem Set 2](assignments/pset2.md)\
 [Link to Assignment 2](assignments/assignment2.md)\
-[Link to Project 1 backend](https://github.com/KaliNikolova/concept_backend)
+[Link to Project 1 backend](https://github.com/KaliNikolova/concept_backend)\
+[Link to Project 1 frontend](https://github.com/KaliNikolova/concept_frontend)\
+[Link to Project 1 (deployed)](https://current-ccit.onrender.com/)
 
 <html>
 <header style="text-align: center">
